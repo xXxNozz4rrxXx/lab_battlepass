@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/hover.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="./progressbar.js"></script>
+</head>
+<body>
+	<!-- home -->
+	<div id="wrap" style="display:none">
+		<div id="side-menu">
+			<div id="exp-progress">
+				<table>
+				<tr>
+					<td>
+					<span id="exp-current">8700</span> / <span id="exp-goal">10000</span><br/>
+					<span id="exp-progress-desc">EXP TO THE NEXT LEVEL</span>
+					</td>
+					<td><center><div id="levelbar"></div></center></td>
+				</tr>
+				</table>
+				<script>
+				var bar = new ProgressBar.Circle(levelbar, {
+				  strokeWidth: 10,
+				  color: 'rgba(255,255,255,0.1)',
+				  trailColor: 'rgba(255,255,255,0.2)',
+				  trailWidth: 1,
+				  easing: 'easeInOut',
+				  duration: 2000,
+				  svgStyle: null,
+				  text: {
+					value: '',
+					alignToBottom: false
+				  },
+				  
+				  // Set default step function for all animate calls
+				  step: (state, bar) => {
+					bar.path.setAttribute('stroke', state.color);
+					var value = Math.round(bar.value() * 100);
+					bar.setText("<span id='level-circle'>3</span><br/><span id='level-circle-desc'>LEVEL</span>");
+					bar.text.style.color = state.color;
+				  }
+				});
+
+
+				bar.animate(87 / 100); 
+
+				</script>
+			</div>
+			
+			
+			<div id="before-get-exp">
+				<span id="before-get-exp-desc">TIMELEFT FOR LEVEL UP</span><br/>
+				<span id="before-get-exp-time">2 HOURS 51 MINUTES</span>
+			</div>
+			<br/>
+			<center>
+			<button id="btn-buy-level"><i class="fas fa-heart"></i> BUY FULL XP FOR CURRENT LEVEL</button>
+			</center>
+		</div>
+		
+		<div id="strain-content" >
+			<div id="battlepass">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<div id="rewards" class="carousel-inner" role="listbox">
+				<!-- 1 - 5 -->
+				  <div class="item active">
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 1</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-done"><i class="fas fa-check"></i> DONE</div>
+							<div id="battlepass-reward-img" style="background:url('./images/money.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">MONEY</div>
+							<div id="battlepass-reward-desc">WIN $10.000 WHITE MONEY</div>
+							<div id="battlepass-received">RECEIVED</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 2</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-done"><i class="fas fa-check"></i> DONE</div>
+							<div id="battlepass-reward-img-weapon" style="background:url('./images/WEAPON_M4A5.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">WEAPON: M4A5</div>
+							<div id="battlepass-reward-desc">WIN AN M4A5 AUTOMATIC ASSAULT WEAPON</div>
+							<button id="battlepass-claim">CLAIM REWARD</button>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 3</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-accomp">ACCOMPLISHMENT</div>
+							<div id="battlepass-reward-img" style="background:url('./images/blueprint_heavy_vest.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">BLUEPRINT HEAVY VEST</div>
+							<div id="battlepass-reward-desc">WIN A BLUEPRINT SO YOU CAN CREATE A HEAVY VEST</div>
+							<div id="battlepass-inprogress" class="w3-border">IN PROGRESS <div class="w3-red" style="width:87%"></div></div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 4</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/cocaleafpremium.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">COCA PREMIUM LEAF</div>
+							<div id="battlepass-reward-desc">WIN A PREMIUM LEAF OF THE DRUG COCAINE</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 5</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+				  </div>
+					
+				<!-- 6 - 10 -->
+				  <div class="item">
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 6</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 7</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 8</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 9</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+					<div id="battlepass-block">
+						<div id="battlepass-level">LEVEL 10</div>
+						<div id="battlepass-block-bg">
+							<div id="battlepass-waiting">WAITING</div>
+							<div id="battlepass-reward-img" style="background:url('./images/extended.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+							<div id="battlepass-reward-title">EXTENDED MAG</div>
+							<div id="battlepass-reward-desc">WIN AN EXTENDED MAG CLIP FOR YOUR WEAPON</div>
+							<div id="battlepass-received">WAITING</div>
+						</div>
+					</div>
+				  </div>
+				</div>
+				
+				<div id="pagination">
+					<button class="btn-arrows" href="#myCarousel" role="button" data-slide="prev"><i class="fas fa-arrow-left"></i></button>
+					<ol class="carousel-indicators" style="display:none">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+					</ol>
+					<button class="btn-arrows" href="#myCarousel" role="button" data-slide="next"><i class="fas fa-arrow-right"></i></button>
+				</div>
+			  </div>
+			  
+			  <script>
+			  $('#myCarousel').carousel({
+				  interval: false,
+				});
+			  </script>
+			</div>
+			
+			<div id="lootbox-main-title">CREW LOOTBOXES</div>
+			<div id="lootboxes">
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="unique">UNIQUE</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-vehicle.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">VEHICLE LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-not-available">
+								NOT AVAILABLE<br/>WITH MONEY
+							</div>
+							<button id="lootbox-not-available-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="new">NEW</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-vests.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">VEST LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-money">
+								MONEY PRICE:<br/>
+								<span id="lootbox-money-price">$40.000</span>
+							</div>
+							<button id="lootbox-money-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="new">NEW</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-casual.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">CASUAL LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-money">
+								MONEY PRICE:<br/>
+								<span id="lootbox-money-price">$40.000</span>
+							</div>
+							<button id="lootbox-money-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="new">NEW</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-item.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">ITEM LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-money">
+								MONEY PRICE:<br/>
+								<span id="lootbox-money-price">$40.000</span>
+							</div>
+							<button id="lootbox-money-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="new">NEW</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-medic.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">MEDIC LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-money">
+								MONEY PRICE:<br/>
+								<span id="lootbox-money-price">$40.000</span>
+							</div>
+							<button id="lootbox-money-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<div id="lootbox-block">
+					<div id="lootbox-drops">
+						<i class="fas fa-info"></i> DROPS
+						<span class="tooltiptext">
+						- Lv 3 Vest: 15%<br/>
+						- Lv 2 Vest: 35%<br/>
+						- Lv 1 Vest: 50%<br/>
+						</span>
+					</div>
+					<div id="new">NEW</div>
+					<div id="lootbox-img" style="background:url('./images/lootbox-all-in-one.png') center center no-repeat;background-size:cover;background-origin:content-box;"></div>
+					<div id="lootbox-title">AIO LOOTBOX</div>
+					<table>
+					<tr>
+						<td>
+							<div id="lootbox-money">
+								MONEY PRICE:<br/>
+								<span id="lootbox-money-price">$40.000</span>
+							</div>
+							<button id="lootbox-money-open">OPEN</button>
+						</td>
+						<td>
+							<div id="lootbox-coins">
+								MAFIA COINS:<br/>
+								<span id="lootbox-coins-price"><i class="fas fa-coins"></i> 150</span>
+							</div>
+							<button id="lootbox-coins-open">OPEN</button>
+						</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

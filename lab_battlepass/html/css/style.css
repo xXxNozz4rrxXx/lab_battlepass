@@ -1,0 +1,713 @@
+*, *::after, *::before {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
+#wrap {
+    position: absolute;
+	font-family: 'Segoe UI';
+	overflow: auto;
+	width: 1500px;
+	min-height: 830px;
+	margin-left: auto;
+	margin-right: auto;
+	background: url('https://media.discordapp.net/attachments/940295379868594198/940296119458607154/battlepass.png') top center no-repeat, #121212;
+	color: rgba(255, 255, 255, 0.9);
+	top: 40%;
+	left:50%;
+    transform: translate(-50%, -40%);
+	box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* #wrap::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	z-index: -1;
+	background: url(../images/fx.gif) center center no-repeat;
+	background-size:cover;
+	mix-blend-mode: lighten;
+	opacity:0.15;
+} */
+
+#wrap .buttons {
+    position:absolute; 
+    bottom: 25px;
+    left: 50%;
+    margin-left: -250px; 
+}
+
+.closeBtn {
+	background: #f92828;
+	border-radius:2px;
+	color:#fff;
+	font-family:Arial;
+	font-size:14px;
+	padding: 8px 12px;
+	line-height:25px;
+	text-decoration:none;
+	cursor: pointer;
+	text-shadow:0px 0px 8px #940000;
+	transition: 0.3s;
+	border:1px solid #ff1717;
+}
+.closeBtn:hover {
+	background:#f92828;
+	color:#fff;
+	box-shadow: 0 0 20px rgb(255 0 0 / 70%);
+    text-shadow: 0px 0px 8px #5d0000;
+}
+
+@keyframes glow-notification {
+	  from {
+		box-shadow: 0 0 20px -10px rgb(255 0 0 / 55%);
+	  }
+	  to {
+		box-shadow: 0 0 20px 0px rgb(255 0 0 / 55%);
+	  }
+	}
+
+#notification{
+	background:url(../images/bell.gif) center left no-repeat, #fcfbf9;
+	color:#000;
+	text-shadow: 0 0 15px #8a8a8a;
+	padding:30px 30px 30px 80px;
+	font-family: 'Segoe UI';
+	position: absolute;
+	right: 50px;
+	bottom: 100px;
+	z-index: 9999;
+	cursor: pointer;
+	border-radius:5px;
+	border:1px solid #ef4a35;
+	animation:fadeInUp 2s 1, glow-notification 1.2s infinite alternate;
+
+}
+
+#pop-up{
+	font-family: 'Segoe UI';
+	overflow-y: auto;
+	position:fixed;
+	min-height: 250px;
+	color: rgba(255, 255, 255, 1);
+	width:99.2%;
+	height:100%;
+	z-index:99999;
+	backdrop-filter:blur(10px);
+	margin-top:-160px
+
+}
+
+#pop-up-inner{
+	font-family: 'Segoe UI';
+	width: 600px;
+	min-height: 120px;
+	background: #151525;
+	color: rgba(255, 255, 255, 1);
+	border-radius:5px;
+	border:1px solid #383958;
+	box-shadow:0 0 45px rgb(0,0,0,1);
+
+}
+
+.yes {
+	background: linear-gradient(to bottom right, #03a500, #e4ff00);
+	border-radius:28px;
+	width:75px;
+	height:25px;
+	color:#ffffff;
+	font-family:Arial;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	line-height:25px;
+	text-decoration:none;
+	cursor:pointer;
+	border:1px solid #6bff56;
+	text-shadow:0px 0px 8px #035d00;
+	box-shadow:0 0 25px #035d00!important;
+}
+
+
+.no {
+	background: linear-gradient(to bottom right, red, yellow);
+	border-radius:28px;
+	width:75px;
+	height:25px;
+	color:#ffffff;
+	font-family:Arial;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	line-height:25px;
+	text-decoration:none;
+	cursor:pointer;
+	border:1px solid #ffd856;
+	text-shadow:0px 0px 8px #5d0000;
+	box-shadow:0 0 25px #ff2800!important;
+}
+
+#side-menu {
+	margin:auto;
+	margin-top:160px;
+	width:340px;
+	float:left;
+	margin-left:25px;
+}
+
+
+#strain-content {
+	margin-left:40px;
+	float:left;
+	margin-top:110px;
+}
+
+#strain-scrollable {
+	width:1090px;
+	height:565px;
+	overflow-y:scroll;
+}
+
+
+/* == LEFT - SIDE == */
+
+#exp-progress {
+	font-size:28px;
+	line-height:24px;
+	margin-left:20px;
+	margin-top:70px;
+}
+
+#exp-current {
+	font-size:28px;
+	font-weight:bold;
+}
+
+#exp-goal {
+	font-size:28px;
+	font-weight:bold;
+	color:#ffd91e;
+	text-shadow: 0 0 20px #ff711e;
+}
+
+#exp-progress-desc {
+	font-size:16px;
+	letter-spacing:1px;
+	margin-top:10px;
+}
+
+#level-circle {
+	font-size:32px;
+	font-weight:600;
+	text-align:center;
+	color:#fff;
+}
+
+#level-circle-desc {
+	font-size:13px;
+	letter-spacing:1px;
+	text-align:center;
+	color:#ccc;
+}
+
+#levelbar {
+  width: 100px;
+  height: 100px;
+  margin-left:20px;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  fill: none;
+  stroke: rgba(255,220,30,1);
+  filter: drop-shadow(0 0 10px rgba(255,120,30,1));
+  stroke-width: 10;
+}
+
+#before-get-exp {
+	line-height:20px;
+	margin-left:20px;
+	margin-top:20px;
+}
+
+#before-get-exp-time {
+	font-size:24px;
+	font-weight:bold;
+	letter-spacing:1px;
+	color:#ffcf21;
+	text-transform:uppercase;
+}
+
+#before-get-exp-desc {
+	font-size:14px;
+	letter-spacing:1px;
+	margin-top:10px;
+	color:#ccc;
+}
+
+#btn-buy-level {
+	background:#70b700;
+	padding:10px 20px;
+	border:1px solid #b2df00;
+	border-radius:25px;
+	color:#fff;
+	font-weight:bold;
+	font-size:16px;
+	cursor:pointer;
+	transition:0.3s;
+}
+
+#btn-buy-level:hover {
+	background:#83d500;
+	border:1px solid #6eff00;
+	color:#fff;
+	box-shadow: 0 0 30px #508300;
+}
+
+/* == RIGHT - SIDE == */
+
+#battlepass {
+	margin-bottom:10px;
+}
+
+#battlepass-main-title {
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+#pagination {
+	position:absolute;
+	top:-50px;
+	right:10px;
+}
+
+.btn-arrows {
+	background:#e1a51e;
+	padding:5px 30px;
+	border:1px solid #ffcf21;
+	border-radius:25px;
+	color:#fff;
+	font-weight:bold;
+	font-size:18px;
+	letter-spacing:1px;
+	cursor:pointer;
+	transition:0.3s;
+}
+
+.btn-arrows:hover {
+	background:#d50000;
+	border:1px solid #ff1f1f;
+	color:#fff;
+	box-shadow: 0 0 20px #830000;
+}
+
+#battlepass-level {
+	font-weight:bold;
+	font-size:20px;
+	margin-bottom:5px;
+}
+
+#battlepass-block {
+	width:210px;
+	height:305px;
+	float:left;
+	text-align:center;
+	margin-right:6px;
+	
+}
+
+#battlepass-block-bg {
+	background:rgba(20,20,20,0.5);
+	padding:10px;
+	width:100%;
+	height:270px;
+	border:1px solid rgba(255,255,255,0.1);
+	float:left;
+	margin-right:6px;
+	position:relative;
+}
+
+#battlepass-done {
+	font-size:18px;
+	color:#fff;
+}
+
+#battlepass-done i{
+	font-size:18px;
+	color:#81ff1f;
+	text-shadow:0 0 20px #4aa900;
+}
+
+#battlepass-accomp {
+	font-size:18px;
+	color:#ff5d2c;
+	text-shadow:0 0 20px #a90000;
+}
+
+#battlepass-waiting {
+	font-size:18px;
+	letter-spacing:1px;
+	color:#ccc;
+}
+
+#battlepass-reward-img {
+	padding:25px;
+	width:150px;
+	height:110px;
+	margin:0 auto;
+}
+
+#battlepass-reward-img-weapon {
+	padding:10px;
+	width:190px;
+	height:110px;
+	margin:0 auto;
+	margin-bottom:5px;
+}
+
+#battlepass-reward-title {
+	font-size:17px;
+}
+#battlepass-reward-desc {
+	font-size:12px;
+	letter-spacing:0.5px;
+	height:40px;
+	color:#ccc;
+	overflow:hidden;
+}
+
+#battlepass-received {
+	color:#ccc;
+	font-size:12px;
+	width:160px;
+	padding:8px 0;
+	border-radius:25px;
+	border:1px solid rgba(255,255,255,0.05);
+	background:rgba(0,0,0,0.2);
+	position:absolute;
+	letter-spacing:1px;
+	left:25px;
+	bottom:10px;
+}
+
+#battlepass-claim {
+	color:#fff;
+	font-size:12px;
+	width:160px;
+	padding:8px 0;
+	border-radius:25px;
+	border:1px solid #e1a51e;
+	background:#e1a51e;
+	position:absolute;
+	letter-spacing:1px;
+	left:25px;
+	bottom:10px;
+	transition:0.3s;
+}
+
+#battlepass-claim:hover {
+	transform:scale(0.95);
+	box-shadow: 0 0 20px rgba(255,180,0,0.5);
+}
+
+.w3-border {
+	background:transparent;
+	border:1px solid rgba(255,255,255,0.05)!important;
+	color:#fff;
+	font-size:12px;
+	width:160px;
+	padding:8px 0;
+	border-radius:25px;
+	position:absolute;
+	letter-spacing:1px;
+	left:25px;
+	bottom:10px;
+}
+
+.w3-red {
+	height:100%;
+	width:100%;
+	border-radius:25px;
+	background-image: linear-gradient(45deg, rgb(255, 217, 0) 25%,transparent 25%, transparent 50%,rgb(255, 217, 0) 50%, rgb(255, 217, 0) 75%,transparent 75%, transparent)!important; 
+	background-color:#e3c100!important;
+	position:absolute;
+	z-index:-1;
+	bottom:0px;
+
+}
+
+
+
+/* -- LOOTBOXES -- */
+
+#lootboxes {
+	width: 1080px;
+    margin-bottom: 10px;
+    overflow: auto;
+	display:inline-flex;
+	padding-bottom:5px;
+	position:relative;
+	z-index:100;
+}
+
+#lootbox-main-title {
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+#lootbox-block {
+	background:rgba(20,20,20,0.5);
+	width:210px;
+	height:270px;
+	padding:10px 0;
+	border:1px solid rgba(255,255,255,0.1);
+	float:left;
+	text-align:center;
+	margin-right:6px;
+	position:relative;
+}
+
+#new {
+	background:rgba(140,255,0,0.2);
+	position: absolute;
+    top: 7px;
+    right:4px;
+	color: #87ff1a;
+	text-shadow:0 0 15px #00ff66;
+    z-index: 1;
+	font-size:10px;
+	padding:4px 8px 3px 8px;
+	border-radius:15px;
+}
+
+#hot {
+	background:rgba(255,30,0,0.2);
+	position: absolute;
+    top: 7px;
+    right:4px;
+	color: #ff792b;
+	text-shadow:0 0 15px #ff6a00;
+    z-index: 1;
+	font-size:10px;
+	padding:4px 8px 3px 8px;
+	border-radius:15px;
+}
+
+#unique {
+	background:rgba(100,0,255,0.4);
+	position: absolute;
+    top: 7px;
+    right:4px;
+	color: #c38dff;
+	text-shadow:0 0 15px #cc00ff;
+    z-index: 1;
+	font-size:10px;
+	padding:4px 8px 3px 8px;
+	border-radius:15px;
+}
+
+
+#lootbox-drops {
+	float:left;
+	cursor:pointer;
+	background:rgba(255,255,255,0.1);
+	border:1px solid transparent;
+	position: absolute;
+    top: 7px;
+    left:4px;
+	color: #ccc;
+    z-index: 5;
+	font-size:10px;
+	padding:4px 8px 3px 8px;
+	border-radius:15px;
+	transition:0.2s;
+}
+
+#lootbox-drops i{
+	transition:0.2s;
+	cursor:pointer;
+	color:rgba(245,55,55,1);
+}
+
+#lootbox-drops:hover {
+	color:rgba(245,55,55,1);
+	cursor:pointer;
+	border:1px solid rgba(245,55,55,0.5);
+}
+
+
+#lootbox-drops .tooltiptext {
+	width:180px;
+	visibility: hidden;
+	background:rgba(205,15,5,0.8);
+	color: rgba(255,255,255,1);
+	text-align: left;
+	padding: 8px;
+	position: absolute;
+	font-size:12px;
+	line-height:16px;
+	z-index: 5;
+	margin-top:-20px;
+	margin-left:20px;
+}
+
+#lootbox-drops .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  transform:  translateY(-50%);
+  right: 100%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(205,15,5,0.8) transparent transparent;
+}
+
+#lootbox-drops:hover .tooltiptext {
+  visibility: visible;
+}
+
+#lootbox-img {
+	padding:10px;
+	width:150px;
+	height:170px;
+	margin:0 auto;
+	margin-bottom:-20px;
+}
+
+
+#lootbox-title {
+	font-size:17px;
+	margin-bottom:5px;
+}
+
+#lootbox-not-available {
+	border-right:1px solid rgba(255,255,255,0.1);
+	width:104px;
+	height:35px;
+	line-height:17px;
+	font-size:9px;
+	color: #ff4b4b;
+    text-shadow: 0 0 20px #ff0000;
+	overflow:hidden;
+	margin-bottom:5px;
+}
+
+
+#lootbox-not-available-open {
+	color:#fff;
+	font-size:12px;
+	width:90px;
+	padding:5px 0;
+	border-radius:25px;
+	border:1px solid #858585;
+	background:#858585;
+	letter-spacing:1px;
+	transition:0.3s;
+	cursor:default;
+	opacity:0.4;
+}
+
+#lootbox-not-available-open:hover {
+
+}
+
+#lootbox-money {
+	border-right:1px solid rgba(255,255,255,0.1);
+	width:104px;
+	height:35px;
+	font-size:9px;
+	color:#ccc;
+	overflow:hidden;
+	margin-bottom:5px;
+}
+
+#lootbox-money-price {
+	font-size:16px;
+	letter-spacing:0.5px;
+	color: #9cff00;
+    text-shadow: 0 0 20px #9cff00;
+}
+
+#lootbox-money-open {
+	color:#fff;
+	font-size:12px;
+	width:90px;
+	padding:5px 0;
+	border-radius:25px;
+	border:1px solid #70b700;
+	background:#70b700;
+	letter-spacing:1px;
+	transition:0.3s;
+}
+
+#lootbox-money-open:hover {
+	transform:scale(0.95);
+	box-shadow: 0 0 20px rgba(135,255,0,0.5);
+}
+
+#lootbox-coins {
+	width:104px;
+	height:35px;
+	font-size:9px;
+	color:#ccc;
+	overflow:hidden;
+	margin-bottom:5px;
+}
+
+#lootbox-coins-price {
+	font-size:16px;
+	letter-spacing:0.5px;
+	color: #ffd400;
+    text-shadow: 0 0 20px #ffbc00;
+}
+
+#lootbox-coins-price i{
+	font-size:12px;
+}
+
+#lootbox-coins-open {
+	color:#fff;
+	font-size:12px;
+	width:90px;
+	padding:5px 0;
+	border-radius:25px;
+	border:1px solid #e1b71e;
+	background:#e1b71e;
+	letter-spacing:1px;
+	transition:0.3s;
+}
+
+#lootbox-coins-open:hover {
+	transform:scale(0.95);
+	box-shadow: 0 0 20px rgba(255,180,0,0.5);
+}
+
+
+
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+	background-color: none;
+	border: none;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 196, 0, 0.4);
+	border-radius:20px;
+	border: 1px solid rgba(255, 217, 0, 0.4);
+}
