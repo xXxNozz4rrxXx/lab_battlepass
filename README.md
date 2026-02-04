@@ -1,5 +1,5 @@
 # lab_battlepass
-FiveM Battlepass by NoahaxTeaM | we leak this because some skids sell it :)
+FiveM Battlepass by NoahaxTeaM | Opensource
 
 Image Preview :
 
